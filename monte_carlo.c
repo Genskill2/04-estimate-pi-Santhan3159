@@ -38,23 +38,18 @@ int main(void) {
     }
   }
 }
-float mc_pi(int n) {
-  int in_circle=0;
-  int out_circle=0;
-  int in_square=0;
-  for(int i=1;i<=n;i++){
-    float a=frandom();
-    float b=frandom();
-    if ((a*a)+(b*b)<=1) {
-      in_circle+=1;
+float mc_pi(int a){
+    float count=0;
+    for(int i=0;i<a;i++){
+        float x=frandom();
+        float y=frandom();
+        float d=sqrt(pow(x,2)+pow(y,2));
+        if(d<1){
+            count++;
+        }
     }
-    else {
-      out_circle+=1;
-    }
-  }
-  in_square=in_square+out_circle;
-  float ratio=(float)in_circle/(float)in_square;
-  return ratio*4;
+    float k = 4*count/a;
+    return k;
 }
 
 
