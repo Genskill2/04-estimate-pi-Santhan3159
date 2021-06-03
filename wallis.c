@@ -29,5 +29,6 @@ float wallis_pi(int n){
   for(p=0;p<n;p++){
     a=a*(4*p*p/((4*p*p)-1));
   }
-  return 2*a;
+  float k =2*a;
+  return k;
 }
