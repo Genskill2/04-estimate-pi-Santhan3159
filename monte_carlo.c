@@ -39,21 +39,21 @@ int main(void) {
   }
 }
 float mc_pi(int n) {
-  int points_in_circle=0;
-  int points_out_circle=0;
-  int points_in_square=0;
+  int in_circle=0;
+  int out_circle=0;
+  int in_square=0;
   for(int i=1;i<=n;i++){
     float a=frandom();
     float b=frandom();
     if ((a*a)+(b*b)<=1) {
-      points_in_circle+=1;
+      in_circle+=1;
     }
     else {
-      points_out_circle+=1;
+      out_circle+=1;
     }
   }
-  points_in_square=points_in_square+points_out_circle;
-  float ratio=(float)points_in_circle/points_in_square;
+  in_square=in_square+out_circle;
+  float ratio=(float)in_circle/(float)in_square;
   return ratio*4;
 }
 
